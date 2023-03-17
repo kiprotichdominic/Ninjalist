@@ -1,9 +1,7 @@
-import Link from "next/link";
-
-export default function Home() {
+export default function Ninjas() {
   return (
     <>
-      <h1>Home Page</h1>
+      <h1>Ninjas</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
         nihil, labore sed non ea nostrum deleniti numquam tempora quae
@@ -18,7 +16,6 @@ export default function Home() {
         eligendi nulla similique blanditiis dolorum dignissimos laudantium,
         magnam obcaecati?
       </p>
-      <Link href="/ninjas">See Ninja Listing</Link>
     </>
   );
 }
