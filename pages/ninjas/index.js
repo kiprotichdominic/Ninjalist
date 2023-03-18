@@ -1,21 +1,30 @@
-export default function Ninjas() {
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../../styles/Ninjas.module.css";
+
+export const getStaticProps = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await response.json();
+  return {
+    props: { ninjas: data },
+  };
+};
+
+export default function Ninjas({ ninjas }) {
   return (
     <>
+      <Head>
+        <title>Ninja List | Ninjas</title>
+        <meta name="keywords" content="ninjas" />
+      </Head>
       <h1>Ninjas</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-        nihil, labore sed non ea nostrum deleniti numquam tempora quae
-        voluptatibus aliquid praesentium molestiae quasi reiciendis est optio.
-        Non quo temporibus, saepe recusandae explicabo deleniti nobis nisi
-        minima dolorem cumque cupiditate enim, consequatur modi sint. Molestias
-        atque inventore sed harum eos, ut reprehenderit, voluptas aperiam
-        sapiente odit quidem nesciunt laudantium unde. Harum, sunt amet quidem
-        veniam et quia cumque voluptates maiores, dicta dolorum voluptatum
-        quibusdam nostrum veritatis explicabo magnam assumenda molestiae magni
-        modi aliquam delectus! Officiis modi neque, aut, possimus alias totam
-        eligendi nulla similique blanditiis dolorum dignissimos laudantium,
-        magnam obcaecati?
-      </p>
+      {ninjas.map((ninja) => (
+        <div key={ninja.id}>
+          <Link href="" className={styles.single}>
+            <h3>{ninja.name}</h3>
+          </Link>
+        </div>
+      ))}
     </>
   );
 }

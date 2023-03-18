@@ -1,6 +1,12 @@
+import Head from "next/head";
+
 function About() {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Ninja List | About</title>
+        <meta name="keywords" content="ninjas" />
+      </Head>
       <h2>About</h2>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, sit.
       Voluptate nesciunt illo vero veritatis et quidem maiores veniam
@@ -13,7 +19,7 @@ function About() {
       voluptatibus iure nobis laudantium distinctio, hic reiciendis officia!
       Placeat vitae enim recusandae provident, sint cum asperiores labore nam
       magni perferendis veritatis! Aut voluptatibus dolorum nobis tempore.
-    </div>
+    </>
   );
 }
 
