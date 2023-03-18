@@ -19,11 +19,11 @@ export default function Ninjas({ ninjas }) {
       </Head>
       <h1>Ninjas</h1>
       {ninjas.map((ninja) => (
-        <div key={ninja.id}>
-          <Link href="" className={styles.single}>
+        <Link href={`/ninjas/${ninja.id}`} key={ninja.id}>
+          <div className={styles.single}>
             <h3>{ninja.name}</h3>
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
     </>
   );
